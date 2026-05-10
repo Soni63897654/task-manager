@@ -117,8 +117,6 @@ $(document).ready(function () {
                         errorText = Object.values(errors)[0][0]; 
                     }
                     msgBox.removeClass('d-none').addClass('alert-danger').text(errorText);
-
-                    // --- AUTO HIDE ERROR LOGIC ---
                     setTimeout(function() {
                         msgBox.fadeOut(600, function() {
                             $(this).addClass('d-none').css('display', ''); 
