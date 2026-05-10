@@ -36,11 +36,12 @@ class AuthController extends Controller
             'password' => Hash::make($request->password)
         ]);
         if ($user) {
+            auth()->login($user);
             return response()->json([
                 'status' => 200,
                 'success' => true,
-                'message' => 'Registration Successful! Please login.',
-                'redirect' => url('/login')
+                'message' => 'Registration Successful! Redirecting to dashboard...',
+                'redirect' => url('/dashboard')
             ], 200);
         }
         return response()->json([
